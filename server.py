@@ -15,12 +15,12 @@ def about():
 
 @app.route('/test',methods = ['POST', 'GET'])
 def test():
-    parametri = ["IQ","Augums","Kājas izmērs"]
-    images1 = open("static/images.db.txt", "r")
-    images = images1.read()
-    images1.close()
-    images = images.strip().split("\n")
-    return render_template("test.html",parametri=parametri,images=images)
+  parametri = ["IQ","Augums","Kājas izmērs"]
+  images1 = open("static/images.db.txt", "r")
+  images = images1.read()
+  images1.close()
+  images = images.strip().split("\n")
+  return render_template("test.html",parametri=parametri,images=images)
 
 #Pārbaudes lapa, lai saprastu, ka kods vispār strādā
 @app.route('/health')
