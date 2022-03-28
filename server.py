@@ -19,7 +19,7 @@ def test():
     images1 = open("static/images.db.txt", "r")
     images = images1.read()
     images1.close()
-    images = images.split("\n")
+    images = images.strip().split("\n")
     return render_template("test.html",parametri=parametri,images=images)
 
 #Pārbaudes lapa, lai saprastu, ka kods vispār strādā
