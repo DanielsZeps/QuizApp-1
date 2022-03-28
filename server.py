@@ -16,7 +16,7 @@ def about():
 @app.route('/test',methods = ['POST', 'GET'])
 def test():
     parametri = ["IQ","Augums","Kājas izmērs"]
-    images1 = open("images.db.txt")
+    images1 = open("static/images.db.txt", "r")
     images = images1.read()
     images1.close()
     images = images.split("\n")
