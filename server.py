@@ -37,5 +37,12 @@ def response(response = "1"):
   file.write(response)
   file.close()
 
+@app.route('/response3')
+def response(response = "1"):
+  file = open("static/storage001.txt", "r")
+  file1 = file.read()
+  file.close()
+  return file1
+
 if __name__ == '__main__':
   app.run(debug="true")
