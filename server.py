@@ -28,7 +28,7 @@ def health():
   return "Viss kārtībā!"
 
 @app.route('/response/<response>')
-def response(response):
+def response(response = "2"):
   return response
 
 if __name__ == '__main__':
