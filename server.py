@@ -27,9 +27,15 @@ def test():
 def health():
   return "Viss kārtībā!"
 
-@app.route('/response/<response>')
+@app.route('/response1/<response>')
 def response(response = "2"):
   return response
+
+@app.route('/response2/<response>')
+def response(response = "1"):
+  file = open("static/storage001.txt", "w")
+  file.write(response)
+  file.close()
 
 if __name__ == '__main__':
   app.run(debug="true")
