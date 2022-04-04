@@ -9,6 +9,11 @@ app = Flask(__name__)
 def root():
     return render_template("index.html")
 
+@app.route('/style1')
+def style1():
+    return render_template("static/style.css")
+
+
 @app.route('/about')
 def about():
   return render_template("about.html")
