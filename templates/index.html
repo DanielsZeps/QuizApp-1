@@ -13,7 +13,20 @@
                     }
                   };
                 }
-                xhttp.open("GET", "/response/" + d.getTime());
+                xhttp.open("GET", "/response1/" + d.getTime());
+                xhttp.send();
+            }
+            function writeData() {
+                const d = new Date();
+                const xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        console.log(this.responseText)
+                      this.innerHTML = this.responseText;
+                    }
+                  };
+                }
+                xhttp.open("GET", "/response2/" + d.getTime());
                 xhttp.send();
             }
         </script>
@@ -22,8 +35,8 @@
         <h1>Šodien taisīsim testu!</h1>
         <p>Šis tests it ļoti svarīgs.</p>
         <h2>Autors - Daniēls Zeps</h2>
-        <button onclick="returnUserData">Return 1</button>
-        <button onclick="returnUserData">Return 2</button>
+        <button onclick="returnUserData()">Return 1</button>
+        <button onclick="writeData()">Return 2</button>
         <ul>
             <li><a href="/about">About</a></li>
             <li><a href="/test">Testing</a></li>
