@@ -27,5 +27,9 @@ def test():
 def health():
   return "Viss kārtībā!"
 
+@app.route('/response/<response>')
+def response(response):
+  return response
+
 if __name__ == '__main__':
   app.run(debug="true")
