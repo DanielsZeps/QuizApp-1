@@ -28,17 +28,18 @@ def health():
   return "Viss kārtībā!"
 
 @app.route('/response1/<response>')
-def response(response = "2"):
+def response1(response = "2"):
   return response
 
 @app.route('/response2/<response>')
-def response(response = "1"):
+def response2(response = "1"):
   file = open("static/storage001.txt", "w")
   file.write(response)
   file.close()
+  return "1"
 
 @app.route('/response3')
-def response(response = "1"):
+def response3():
   file = open("static/storage001.txt", "r")
   file1 = file.read()
   file.close()
