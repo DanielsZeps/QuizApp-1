@@ -1,0 +1,14 @@
+<html>
+    <body>
+        <h1>Parametri no servera</h1>
+        {% for question in questions %}
+        <h1 value="{{question[0][1]}}" onclick="console.log(this.value)"> {{x}}. {{question[0][0]}} </h1>
+        <select><ul>
+            {% for answer in question[1] %}
+            <option><li> {{answer}} </li></option>
+            {% endfor %}
+        </ul></select>
+        {% endfor %}
+        <p>Šīs ir bildes!</p>
+    </body>
+</html>

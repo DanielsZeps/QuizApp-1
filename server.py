@@ -11,12 +11,27 @@ def root():
 
 @app.route('/style1')
 def style1():
-    return render_template("static/style.css")
-
+    return render_template("style.css")
 
 @app.route('/about')
 def about():
   return render_template("about.html")
+
+@app.route('/quizz')
+def quizz():
+  file = open("static/questions.txt", "r")
+  text = file.read()
+  file.close()
+  text = text.split("\n")
+  numbers = []
+  for x in range(0, len(text)):
+    text[x] = text[x].split(":")
+    text[x][0] = text[x][0].split(",")
+    text[x][0][0] = str(x+1) + ". " + text[x][0][0]
+    text[x][1] = text[x][1].split(",")
+    for y in range(0, len(text[x][1])):
+      text[x][1][y] = str(y+1) + ". " + text[x][1][y]
+  return render_template("quizz.html",questions = text)
 
 @app.route('/test',methods = ['POST', 'GET'])
 def test():
