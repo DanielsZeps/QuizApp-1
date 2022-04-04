@@ -6,12 +6,12 @@
             function returnUserData() {
                 const d = new Date();
                 const xhttp = new XMLHttpRequest();
-                xhttp.onload = function() {
-                    console.log(this.responseText)
-                    if (this.statu = 200 && this.readyState == 4) {
-                        console.log()
-                        this.innerHTML = this.responseText;
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        console.log(this.responseText)
+                      this.innerHTML = this.responseText;
                     }
+                  };
                 }
                 xhttp.open("GET", "/response/" + d.getTime());
                 xhttp.send();
